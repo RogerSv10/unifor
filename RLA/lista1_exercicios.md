@@ -41,4 +41,33 @@ SENAO
 FIM_ALGORITMO
 ```
 
+# UNIFOR
+**DISCIPLINA**  RECIOCINIO LOGICO ALGORITMICO
+**ORIENTADOR** Ricardo Carubbi
+## lista de exercicios 2
+### exercicio 1 
 
+### pseudocodigo
+```
+ALGORITMO calcular_media
+DECLARE n1, n2, n3, n4, media INTEIRO
+ESCREVA "Digite sua primeira nota: "
+LEIA n1
+ESCREVA "digite sua segunda nota: "
+LEIA n2
+ESCREVA "digite sua terceira nota: "
+LEIA n3
+ESCREVA "digite sua quarta nota: "
+LEIA n4
+media <-- (n1 + n2 + n3 + n4) / 4
+ESCREVA "sua media é: ", media
+```
+
+```
+ALGORITMO elevar_ao_quadrado
+DECLARE numero, A REAL
+ESCREVA "digite um numero qalquer: "
+LEIA numero
+A <-- numero ** 2
+ESCREVA "o quadrado de ", numero , " é: ", A
+```
