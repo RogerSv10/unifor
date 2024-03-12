@@ -23,7 +23,7 @@ g --true--> i{{o numero é par!}}
 h --> j([fim])
 i --> j
 ```
-
+### pseudocodigo
 
 ```
 ALGORITMO verifica_par_impar
@@ -46,6 +46,7 @@ FIM_ALGORITMO
 **ORIENTADOR** Ricardo Carubbi
 ## lista de exercicios 2
 ### exercicio 1 
+calcule a media de quatro numeros inteiros
 
 ### pseudocodigo
 ```
@@ -62,12 +63,48 @@ LEIA n4
 media <-- (n1 + n2 + n3 + n4) / 4
 ESCREVA "sua media é: ", media
 ```
+### fluxograma
+```mermaid
+flowchart TD
+a([inicio]) --> b{{digite 4 numeros}}
+b --> c[/n1,n2,n3,n4/]
+c --> d[media <-- n1 + n2 + n3+ n4/4]
+d --> e{{a media é 'media'}}
+e --> f([fim])
+```
+
+
+
+### pseudocodigo
+### exercicio numero 5
+calcule o quadrado de um numero
 
 ```
-ALGORITMO elevar_ao_quadrado
-DECLARE numero, A REAL
-ESCREVA "digite um numero qalquer: "
+ALGORITMO calcular_quadrado
+DECLARE numero, quadrado INTEIRO
+ESCREVA "digite um numero"
 LEIA numero
-A <-- numero ** 2
-ESCREVA "o quadrado de ", numero , " é: ", A
+quadrado <-- numero * numero
+ESCREVA "o quadrado de ", numero, " é: ", quadrado
+```
+
+### fluxograma
+```mermaid
+flowchart TD
+a([inicio]) --> b{{digite um numero:}}
+b --> c[/numero/]
+c --> d[quadrado <-- numero * numero]
+d --> e[/quadrado/]
+e --> f([fim])  
+```
+### exercicio numero 2
+Leia uma temperatura dada na escala Celsius (C) e imprima o equivalente em Fahrenheit (F)
+### pseudocodigo
+```
+ALGORITMO converter_C_F
+DECLARE c, f REAL
+ESCREVA "digite a temperatura em fahrenheit: "
+LEIA f
+c <-- 5/9 * (f - 32)
+ESCREVA "a temperatura em celsius é: ", c)
 ```
