@@ -12,3 +12,32 @@ A EX1 é avaliada mediante a correção dos exercícios, sendo a avaliação no 
 A AP1 é avaliada mediante aos pré-requisitos de clareza, organização e domínio do conteúdo. Portanto, o aluno deve demonstrar um bom entendimento do algoritmo, explicando seus princípios fundamentais, seu propósito e como ele funciona passo a passo.
 
 A avaliação da AP1 é apenas considerada no intervalo de 0% (não atende os pré-requisitos), 50% (atende parcialmente) e 100% (atende em sua totalidade). Por exemplo, se na apresentação do exercício, o aluno atenter parcialmente os pré-requisitos, então sua avaliação da apresentação será 5,0.
+
+# AD1
+
+### questão 1
+Dadas duas variáveis, A e B, implemente e teste um algoritmo para trocar os valores atribuídos a elas.
+### pseudocodigo
+```
+DECLARE x, y, aux INTEIRO
+ESCREVA "digite o valor de x:"
+LEIA x
+ESCREVA "digite o valor de y:"
+LEIA y
+aux <- y
+y <- x
+x <- aux
+ESCREVAL "x agora vale: ", x"
+ESCREVAL "y agora vale: ", y"
+```
+### FLUXOGRAMA
+```mermaid
+flowchart TD
+a([inicio]) --> b{{digite dois valores: }}
+b --> c[/A, B/]
+c --> d[auxiliar <-- A]
+d --> e[A <-- B]
+e --> f[B <-- auxiliar]
+f --> g{{o valor de A agora é: A, e o valor de B agora é: B}}
+g --> h([fim])
+```
