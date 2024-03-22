@@ -46,7 +46,7 @@ J --> I
 | 2000 | Gerente | F | V | 2600 | “Salário Reajustado = 2600“ |
 | 9000 | Diretor | F | F | 9900 | “Salário Reajustado = 9900“ |
 
-### Exercício 01 (2.5 pontos)
+### Exercício 01 
 Calcule a média de quatro números inteiros dados.
 
 ### pseudocodigo
@@ -102,11 +102,11 @@ ESCREVA "a temperatura em celsius é: ", c)
 |   10    | 50.0  |
 |   36    | 96.8  |
 
-### Exercício 03 (2.5 pontos)
+### Exercício 03 
 Receba dois números reais e um operador e efetue a operação correspondente com os valores recebidos (operandos). 
 O algoritmo deve retornar o resultado da operação selecionada simulando todas as operações de uma calculadora simples.
 
-#### Fluxograma (1.0 ponto)
+#### Fluxograma 
 
 ```mermaid
 flowchart TD
