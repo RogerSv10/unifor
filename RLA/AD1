@@ -30,6 +30,7 @@ x <- aux
 ESCREVAL "x agora vale: ", x"
 ESCREVAL "y agora vale: ", y"
 ```
+
 ### FLUXOGRAMA
 ```mermaid
 flowchart TD
@@ -60,6 +61,24 @@ Será considerado aprovado o aluno que tirar nota 50 ou maior (no intervalo de 0
     - obter a próxima nota;
     - se a nota for suficiente para passar no exame (n ≥ 50) então adicionar 1 (um) à contagem $cont$;
 4. Exibir a contagem cont (número total de aprovações).
+### pseudocodigo
+```
+Algoritmo ContaAprovacoes
+DECLARAR n, cont, i, nota: INTEIRO
+INICIAR
+ESCREVA "Digite o numero de notas: "
+LEIA n
+ENQUANTO i != n FAÇA
+	ESCREVA "digite a nota de 0 a 100:"
+	LEIA nota
+	SE nota >= 50 ENTÃO
+		cont = cont + 1
+	i = i + 1
+FIM_ENQUANTO
+ESCREVA "numero de alunos aprovados: ", cont
+FIM
+```
+
 ### fluxograma:
 
 ```mermaid
@@ -90,10 +109,204 @@ K --LOOP--> F
 | 4  | 3  | 4  |  2   | False |         |      |             |        |     | Aprovados: 2 |
 ```
 
+### Questão 3 - Soma de um conjunto de números
+
+Dado um conjunto de $n$ números, implemente e teste um algoritmo para calcular a soma desses números. <br>
+Aceite apenas $n$ maior ou igual a zero.
+
+#### Descrição geral do algoritmo
+
+1. Obter a quantidade de números $n$ a serem somados.
+2. Inicializar a variável $soma$ com 0 (zero).
+3. Enquanto menos do que $n$ números tiverem sido somados, fazer repetidamente:
+    - obter o próximo número $i$;
+    - calcular a soma atual, adicionando o número $i$ obtido à soma mais recente;
+4. Exibir a soma dos $n$ números
+
+### Fluxograma 
+
+```mermaid
+flowchart TD
+a([INICIO]) --> b{{Digite quantos numeros serão somados: }}
+b --> c[/n/]
+c --> d[soma = 0, a = 0]
+d --> e{a != n}
+e --false--> f{{soma}}
+f --> F([FIM])
+e --loop--> g{{Digite um numero: }}
+g --> h[/i/]
+h --> i[soma = soma + i]
+i --> j[a = a + 1]
+j --> e
+
+```
+### Pseudocódigo 
+
+```
+Algoritmo ContaAprovacoes
+DECLARAR n, soma, a, i: INTEIRO
+INICIAR
+ESCREVER "Digite quantos numeros serão somados: "
+LEIA n
+EMQUANTO a != 0 FAÇA
+	Digite um numero:
+	soma = soma + i
+	a = a + 1
+FIM_ENQUANTO
+ESCREVER soma
+FIM
+```
+#### Teste de mesa 
+
+| Entrada | n1 | n2 | n3 | n4 | n5 | Saída |
+|   --    | -- | -- | -- | -- | -- |  ---  |
+|   3     |  4 |  7 |  2 | -- | -- |  13   |
+|   5     |  9 | 16 | 11 |  7 | 15 |  58   |
+
+### Questão 4 - Cálculo de uma série 
+
+Dado um conjunto de $n$ termos da série, implemente e teste um algoritmo para calcular o valor de S, conforme definido abaixo:
+
+$$ S = \frac{1}{2} + \frac{3}{4} + \frac{5}{6} + \frac{7}{8} + \dots $$
+
+#### Descrição geral do algoritmo
+
+1. Obter o número de termos $n$;
+2. Inicializar a variável $S$ com 0 (zero).
+3. Iterar o valor de $n$ na variável $i$ iniciando com 0 (zero), de acordo com as instruções abaixo:
+    - calcular o numerador na variável $numerador$;
+    - calcular o denominador  na variável $denominador$;;
+    - calcular o termo da série na variável $termo$, onde $termo = numerador/denominador$;
+    - adicionar esse termo à variável $S$.
+4. Exibir o valor da série $S$.
+
+### Fluxograma 
+
+```mermaid
+flowchart TD
+a([INICIO]) --> b{{Digite o numero de termos: }}
+b --> c[/n/]
+c --> d[S = 0, i = 0]
+d --> e{i < n}
+e --false--> f{{S}}
+f --> l([FIM])
+e --loop--> g[numerodor = i * 2 + 1]
+g --> h[denominador = i * 2 + 2]
+h --> i[termo = numerador/denominador]
+i --> j[S = S + termo]
+j --> k[i = i + 1]
+k --> e
+
+```
+
+### Pseudocódigo 
+
+```
+Algoritmo ContaAprovacoes
+DECLARAR n, S, i, numerador, denominador: REAL
+ESCREVA Digite o numero de termos: 
+LEIA n
+S = 0, i = 0
+ENQUANTO i < n FAÇA
+	numerodor = i * 2 + 1
+	denominador = i * 2 + 2
+	termo = numerador/denominador
+	S = S + termo
+	i = i + 1
+FIM_ENQUANTO
+ESCREVER S
+FIM
+```
+#### Teste de mesa 
+
+|   Entrada   |    Saída    |
+|    ---      |     ---     |
+|     3       |    1,78     |
+|     6       |    4,775    |
+
+
+### Questão 5 - Cálculo fatorial 
+
+Dado um número $n$, implemente e teste um algoritmo para calcular o fatorial de $n$ (escrito como $n!$), onde $n ≥ 0$.
+
+#### Descrição geral do algoritmo
+
+1. Obter o número $n$, onde $n \geq 0$;
+2. Inicializar a variável $fator$ com 1 (um) para armazenar o resultado do cálculo do fatorial;
+3. Iterar o valor de $n$ na variável $i$, ou seja, executar $n$ vezes, as instruções abaixo:
+    - Incrementar o valor atual $fator$ multiplicando pelo valor de $i$;
+4. Exibir o resultado ($n!$).
+
+### Fluxograma 
+
+```mermaid
+flowchart TD
+a([INICIO]) --> b{{Digite um numero maior ou igual a 0: }}
+b --> c[/n/]
+c --> d[fator = 1, i = 1]
+d --> D{n = 0 ou n = 1}
+D --false--> e{i < n}
+D --true--> E{{fator}}
+e --loop--> f[fator = fator * i]
+f --> g[i = i + 1]
+g --> e
+e ---false--> h{{fator}}
+h --> i([FIM])
+E --> i
+```
+
+#### Pseudocódigo 
+
+```
+Algoritmo ContaAprovacoes
+DECLARAR n, fator, i: INTEIRO
+INICIAR
+ESCREVER "Digite um numero maior ou igual a 0: "
+LEIA n
+fator = 1
+i = 1
+SE n = 0 ou n = 1
+	ESCREVER fator
+	FIM
+SENÂO
+ENQUANTO i < n FAÇA
+	fator = fator * i
+	i = i + 1
+FIM_ENQUANTO
+ESCREVER fator
+FIM
+```
+
+### Teste de mesa 
+
+|  Entrada  |   Saída  |
+|    ---    |    ---   | 
+|     4     |    24    |
+|     6     |   720    |
+
+
+
+
+
+
+
+
+
+
 ### Questão 6 - Geração da sequência de Fibonacci 
 
 Gerar e imprimir os n primeiros termos da sequência de Fibonacci, onde n ≥ 1. 
 Os primeiros termos são: $0, 1, 1, 2, 3, 5, 8, 13, \dots. Cada termo, além dos dois primeiros, é derivado da soma dos seus dois antecessores mais próximos.
+
+#### Descrição geral do algoritmo
+
+1. Obter o número de termos $n$, onde $n \geq 1$;
+2. Inicializar os dois primeiros termos da série nas variável $a$ e $b$ com 0 (zero);
+3. Iterar o valor de $n$, ou seja, executar $n$ vezes, as instruções abaixo:
+    - Imprimir o termo inicial $a$ (instrução para exibir a sequência ao atualizar a variável $a$);
+    - Somar os termos $a$ e $b$ na variável $termo_atual$;
+    - Atribuir a variável $a$ o valor da variável $b$;
+    - Atribuir a variável $b$ o valor da variável $termo_atual$.
 
 ### Fluxograma
 
@@ -139,6 +352,62 @@ ESCREVA("digite o limite da sequencia de fibonacci: ")
    fimenquanto
 
 ```
+
+### Questão 7 - Inversão dos dígitos de um número inteiro 
+
+Implemente e teste um algoritmo para inverter a ordem dos dígitos de um número inteiro positivo.
+
+#### Descrição geral do algoritmo
+
+1. Obter o número inteiro positivo $num$ a ser invertido;
+2. Inicializar a variável com 0 (zero);
+3. Enquanto o número for maior que zero ($num > 0$), faça repetidamente:
+    - Calcular o último dígito do número na variável $digito$;
+    - Adicionar o dígito ao número invertido;
+    - Remover o último dígito do número original $num$; 
+4. Exibir o número invertido.
+
+### Fluxograma 
+
+```mermaid
+flowchart TD
+a([Início]) --> b{{Digite um númmero positivo: }}
+b --> c[/num/]
+c --> d{num > 0}
+d --false--> h{{invertido}}
+h --> i([Fim])
+d --loop--> e["digito = num % 10"]
+e --> f[invertido = invertido * 10 + digito]
+f --> g[num = num / 10]
+g --> d
+```
+
+#### Pseudocódigo 
+
+```
+Algoritmo ContaAprovacoes
+DECLARAR num, digito, invertido: INTEIRO
+INICIAR
+ESCREVER "Digite um númmero positivo: "
+LEIA num
+ENQUANTO num > 0 FAÇA
+	digito = num % 10
+	invertido = invertido * 10 + digito
+	num = num / 10
+FIM_ENQUANTO
+ESCREVER = invertido
+FIM
+```
+#### Teste de mesa 
+
+|   Entrada    | Número invertido |
+|      --      |        --        | 
+| 123          | 321              | 
+| 398472       | 274893           |
+| 1001         | 1001             |
+
+
+
 
 
 
