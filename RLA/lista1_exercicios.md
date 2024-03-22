@@ -41,70 +41,143 @@ SENAO
 FIM_ALGORITMO
 ```
 
-# UNIFOR
-**DISCIPLINA**  RECIOCINIO LOGICO ALGORITMICO
-**ORIENTADOR** Ricardo Carubbi
-## lista de exercicios 2
-### exercicio 1 
-calcule a media de quatro numeros inteiros
+#### Teste de mesa 
+| numero | numero >= 0 | resto | resto == 0 | Saída |
+| -- | -- | -- | -- | -- | 
+| -1 | F |   |   | "O número deve ser postivo!" |
+| 0  | V | 0 | V | "O número é par!" |
+| 13 | V | 1 | F | "O número é impar!" |
+| 30 | V | 0 | V | "O número é par!" |
 
-### pseudocodigo
-```
-ALGORITMO calcular_media
-DECLARE n1, n2, n3, n4, media INTEIRO
-ESCREVA "Digite sua primeira nota: "
-LEIA n1
-ESCREVA "digite sua segunda nota: "
-LEIA n2
-ESCREVA "digite sua terceira nota: "
-LEIA n3
-ESCREVA "digite sua quarta nota: "
-LEIA n4
-media <-- (n1 + n2 + n3 + n4) / 4
-ESCREVA "sua media é: ", media
-```
-### fluxograma
+
+## Exercício 02 
+Represente, em fluxograma e pseudocódigo, um algoritmo para calcular o novo salário de um funcionário. 
+Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 terão aumento de 20%; os demais terão aumento de 10%.
+
+#### Fluxograma 
+
 ```mermaid
 flowchart TD
-a([inicio]) --> b{{digite 4 numeros}}
-b --> c[/n1,n2,n3,n4/]
-c --> d[media <-- n1 + n2 + n3+ n4/4]
-d --> e{{a media é 'media'}}
-e --> f([fim])
+A([INICIAR]) --> B{{Digite seu salario: }}
+B --> D[/salario/]
+D --> E{salario <= 500}
+E --N--> F[novo_salario = salario + salario * 0.1]
+E --S--> G[novo_salario = salario + salario * 0.2]
+F --> H{{'Seu novo salario: ', novo_salario}}
+G --> H
 ```
 
-
-
-### pseudocodigo
-### exercicio numero 5
-calcule o quadrado de um numero
+#### Pseudocódigo 
 
 ```
-ALGORITMO calcular_quadrado
-DECLARE numero, quadrado INTEIRO
-ESCREVA "digite um numero"
-LEIA numero
-quadrado <-- numero * numero
-ESCREVA "o quadrado de ", numero, " é: ", quadrado
+Algoritmo ContaAprovacoes
+DECLARAR salario, novo_salario: REAL
+ESCREVER "Digite seu salario: "
+LEIA salario
+SE salario <= 500 ENTAO
+	novo_salario = salario + salario * 0.2
+	ESCREVER "Seu novo salario: R$", novo_salario
+SENAO
+	novo_salario = salario + salario * 0.1
+	ESCREVER "Seu novo salario: R$", novo_salario
+FIM
 ```
 
-### fluxograma
+#### Teste de mesa 
+
+|Entrada|Saída| 
+|      --      |      --      |
+|750|Seu novo salario: R$825,00|
+|400|Seu novo salario: R$480,00|
+|500|Seu novo salario: R$600,00|
+
+
+## Exercício 03 
+Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
+
+### Fluxograma 
 ```mermaid
 flowchart TD
-a([inicio]) --> b{{digite um numero:}}
-b --> c[/numero/]
-c --> d[quadrado <-- numero * numero]
-d --> e[/quadrado/]
-e --> f([fim])  
+A([INICIAR]) -->B{{Digite a nota 1: }}
+B --> C[/nota1/]
+C --> D{{Digite a nota 2: }}
+D --> E[/nota2/]
+%%Usar " " para adicionar simbolos sem interferência
+E --> G["media = (nota1 + nota2) / 2"]
+G --> H{media >= 7}
+H --S--> I{{APROVADO}}
+H --N--> J{{REPROVADO}}
 ```
-### exercicio numero 2
-Leia uma temperatura dada na escala Celsius (C) e imprima o equivalente em Fahrenheit (F)
-### pseudocodigo
+
+### Pseudocódigo 
+
 ```
-ALGORITMO converter_C_F
-DECLARE c, f REAL
-ESCREVA "digite a temperatura em fahrenheit: "
-LEIA f
-c <-- 5/9 * (f - 32)
-ESCREVA "a temperatura em celsius é: ", c)
+Algoritmo ContaAprovacoes
+DECLARE nota1, nota2, media: REAL
+ESCREVER "Digite a nota 1:" 
+LEIA nota1
+ESCREVER "Digite a nota 2:" 
+LEIA nota2
+media = (nota1 + nota2) / 2
+SE media >= 7 ENTAO
+	ESCREVER("APROVADO")
+SENAO
+	ESCREVER("REPROVADO")
 ```
+
+### Teste de mesa 
+
+|Nota1|Nota2|Saída|
+|  -  |  -  |  -  | 
+| 5 | 8.5 |REPROVADO|
+|8|9.3|APROVADO|
+|10|5.5|APROVADO|
+
+## Exercício 04 
+Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. 
+Caso não atender a restrição de idade, calcular quantos anos faltam para o candidato estar apto.
+
+#### Fluxograma 
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{Digite sua idade: }}
+B --> C[/idade/]
+C --> D[idade >= 18]
+D --N--> F[idade_falta = 18 - idade]
+F --> G{{'Falta', idade_falta, 'anos para tirar CNH.'}}
+D --S--> E{{Pode tirar CNH}}
+G --> H([Fim])
+E --> H
+```
+
+#### Pseudocódigo 
+
+```
+Algoritmo ContaAprovacoes
+DECLARAR idade, idade_falta: INTEIRO
+ESCREVER "Digite sua idade: "
+LEIA idade
+SE idade >= 18 ENTAO
+	ESCREVER "Pode tirar CNH"
+SENAO
+	idade_falta = 18 - idade
+	ESCREVER "Falta ", idade_falta, " anos para tirar CNH"
+FIM
+```
+
+#### Teste de mesa 
+
+| Entrada | Saída |
+|      --      |      --      | 
+| 20     | Pode tirar CNH      |
+| 14   |Falta 4 anos para tirar CNH|
+|17|Falta 1 anos para tirar CNH|
+
+
+
+
+
+
+
+
