@@ -1,1 +1,273 @@
+## Exercício exemplo 1
+Implemente e teste um programa que imprima os n primeiros números.
+
+#### Fluxograma
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{Digite um número: }}
+B --> C[\n\]
+C --> D[\num = 1\]
+D --> E{num <= n}
+E --FALSE--> I([FIM])
+E --TRUE--> F{{"Num", num}}
+F --> G[num =+ 1]
+G --LOOP--> E
+```
+
+#### Pseudocódigo
+```
+1 ALGORITMO print_n_primeiros
+2 DECLARE n, num: INTEIRO
+3 INICIO
+4 ESCREVA “Digite um número: ”
+4 LEIA n			// variável de entrada n
+4 num ← 1			// variável num inicializada
+5 ENQUANTO num <= n FAÇA	// n iterações
+7	ESCREVA “Número ”, num
+8	num ← num + 1		// num =+ 1 (incremento)
+8 FIM_ENQUANTO
+9 FIM
+```
+
+#### Teste de mesa
+| it | n  | num | num <= n | Saída      | num =+ 1 |
+| -- | -- | --  | --       | --         | --       |
+| 1  | 10 | 1   | True     | Número 1   | 2        |
+| 2  | 10 | 2   | True     | Número 2   | 3        |
+| 3  | 10 | 3   | True     | Número 3   | 4        |
+| 4  | 10 | 4   | True     | Número 4   | 5        |
+| 5  | 10 | 5   | True     | Número 5   | 6        |
+| 6  | 10 | 6   | True     | Número 6   | 7        |
+| 7  | 10 | 7   | True     | Número 7   | 8        |
+| 8  | 10 | 8   | True     | Número 8   | 9        |
+| 9  | 10 | 9   | True     | Número 9   | 10       |
+| 10 | 10 | 11  | True     | Número 10  | 11       |
+| 11 | 10 | 11  | False    |            |          |
+
+## Exercício exemplo 2
+Implemente e teste um programa que some os n primeiros números.
+
+#### Fluxograma
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{Digite um número: }}
+B --> C[\n\]
+C --> D[\soma = 0\]
+D --> E[[i=1 ATÉ n PASSO 1]]
+E --> G([FIM])
+E --> F[soma =+ i]
+F --LOOP--> E
+```
+
+#### Pseudocódigo
+```
+1  ALGORITMO	soma_n_numeros()
+2  DECLARE	n, i, soma: INTEIRO
+3  INICIO
+4  ESCREVA “Digite a quantidade de números: ”
+5  LEIA n		// variável de entrada n
+7  soma ← 0		// variável soma inicializada
+6  PARA i DE 1 ATÉ n PASSO 1 FAÇA
+7	soma ← soma + i	// soma =+ i (incremento)
+8  FIM_PARA
+9  ESCREVA “A soma é igual a ”, soma
+10 FIM
+```
+
+#### Teste de mesa
+| it | n  | soma | i  | soma =+ i |
+| -- | -- | --   | -- | --        |
+| 1  | 10 | 0    | 1  | 1         |
+| 2  | 10 | 1    | 2  | 3         |
+| 3  | 10 | 3    | 3  | 6         |
+| 4  | 10 | 6    | 4  | 10        |
+| 5  | 10 | 10   | 5  | 15        |
+| 6  | 10 | 15   | 6  | 21        |
+| 7  | 10 | 21   | 7  | 28        |
+| 8  | 10 | 28   | 8  | 36        |
+| 9  | 10 | 36   | 9  | 45        |
+| 10 | 10 | 45   | 10 | 55        | 
+
+### exercicio 3
+Represente, em fluxograma e pseudocódigo, um algoritmo para determinar se um numero inteiro e positivo é par ou impar.
+
+### fluxograma
+```mermaid
+flowchart TD
+a([inicio]) --> b{{digite um numero:}}
+b --> c[/numero/]
+c --> d{numero > 0}
+d --false--> e{{o numero deve ser positivo!}}
+e --> j
+d --true-->f[resto = numero % 2]
+f --> g{resto == 0}
+g --false--> h{{o numero é impar!}}
+g --true--> i{{o numero é par!}}
+h --> j([fim])
+i --> j
+```
+
+
+```
+ALGORITMO verifica_par_impar
+DECLARE numero, resto INTEIRO
+ESCREVA "digite um numero : "
+LEIA numero
+SE numero >= 0 ENTAO
+		resto = numero % 2
+		SE resto == 0 ENTAO
+				ESCREVA "o numero é par"
+		SENAO
+					ESCREVA "o numero é impar!"
+SENAO							
+			ESCREVA "o numero deve ser positivo"
+FIM_ALGORITMO
+```
+#### Teste de mesa 
+
+| Entrada | Saída |
+|      --      |      --      |
+|      10      |  Numero Par  |
+|      55      | Numero Impar |
+
+### Exercício 02 
+
+Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas os múltiplos de 3.
+
+#### Fluxograma 
+
+
+```mermaid
+flowchart TD
+a([INICIO]) --> b[num = 0]
+b --> c{num < 31}
+c --false--> d([FIM])
+c --loop--> D[i = num % 3]
+D --> e{i == 0}
+e --false--> F[i= i + 1]
+f --> F
+e --true--> f{{num}}
+F --> c
+```
+
+#### Pseudocódigo 
+
+
+```
+Algoritmo ClassificaCategoria
+DECLARAR num, i: int
+INICIAR
+num = 0
+SE num < 31 ENTAO
+	i = num % 3
+	SE i == 0 ENTAO
+		ESCREVER num
+	i = i + 1
+FIM
+```
+
+#### Teste de mesa 
+
+
+| Saída |
+|   -   | 
+|0|
+|3|
+|6|
+|9|
+|12|
+|15|
+|18|
+|21|
+|24|
+|27|
+|30|
+
+### Exercício 03 
+Dada uma sequência de números inteiros, calcular a sua soma. 
+Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrever o número 35.
+
+#### Fluxograma 
+
+```mermaid
+flowchart TD
+a([INICIO]) --> b{{Digite os numero para ser somado e digite 0 para ver o resultado}}
+b --> c[/num/]
+c --> d{num != 0}
+d --false--> e{{soma}}
+d --loop--> E[soma = soma + num]
+E --> f{{Digite outro numero ou 0: }}
+f --> g[/num/]
+g --> d
+```
+
+#### Pseudocódigo 
+
+```
+Algoritmo ClassificaCategoria
+DECLARAR num, soma: INTEIRO
+INICIAR
+ESCREVA "Digite os numero para ser somado e digite 0 para ver o resultado"
+LEIA num
+ENQUANTO num != 0 FAÇA
+	soma = soma + num
+	ESCREVA "Digite outro numero ou 0:"
+	LEIA num
+FIM_ENQUANTO
+ESCREVER soma
+FIM
+```
+
+#### Teste de mesa
+
+| entrada1 | entrada2 | entrada3 | entrada4 | Saída | 
+|      --      |      --      |      --      |      --      |      --      | 
+| 15     | 5      | -13    |  0     | 7    |
+| 11   | -3   | 14   | 0 | 22  |
+
+### Exercício 04 
+Escreva um programa que leia a nota de diversos alunos, até que seja digitada uma nota negativa. 
+Nesse momento, ele mostra a média aritmética de todas as notas lidas e quantas notas foram lidas. 
+Ex. Foram lidas 14 notas. A média aritmética é 6.75!
+
+#### Fluxograma 
+```mermaid
+flowchart TD
+a([INICIO]) --> b{{Digite quantos alunos são: }}
+b --> B[/alunos/]
+B --> c{i < alunos}
+c --false--> d[media = soma / alunos]
+d --> D{{'Foram lidas', alunos, ' notas. A média aritmética é ', media}}
+D --> H([FIM])
+c --loop--> f{{"Digite a(s) nota(s): "}}
+f --> F[/nota/]
+F --> g[soma = soma + nota]
+g --> G[i = i + 1]
+G --> c
+```
+
+#### Pseudocódigo 
+
+```
+Algoritmo ClassificaCategoria
+DECLARAR alunos, nota, soma, media
+INICIAR
+ESCREVER "Digite quantos alunos são:"
+LEIA alunos
+SE i < alunos FAÇA
+	ESCREVER "Digite a(s) nota(s):"
+	LEIA nota
+	soma = soma + notas
+	i = i + 1
+media = soma / alunos
+ESCREVER "Foram lidas", alunos, " notas. A média aritmética é ", media
+FIM
+```
+
+#### Teste de mesa 
+
+| Entrada1 | Entrada2 | Entrada3 | Entrada4 | Saída | 
+|      --      |      --      |      --      |      --      |      --      | 
+| 3     | 7.5       | 8.5    | 8 | Foram lidas 3 notas. A média aritmética é 8.0|
+| 2     | 10        | 7      | - |Foram lidas 2 notas. A média aritmética é 8.5|
 
