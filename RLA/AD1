@@ -20,6 +20,7 @@ Dadas duas variáveis, A e B, implemente e teste um algoritmo para trocar os val
 ### pseudocodigo
 ```
 DECLARE x, y, aux INTEIRO
+// variaveis x e y como 
 ESCREVA "digite o valor de x:"
 LEIA x
 ESCREVA "digite o valor de y:"
@@ -225,7 +226,7 @@ FIM
 |     6       |    4,775    |
 
 
-### Questão 5 - Cálculo fatorial 
+### Questão 5 - Cálculo fatorial
 
 Dado um número $n$, implemente e teste um algoritmo para calcular o fatorial de $n$ (escrito como $n!$), onde $n ≥ 0$.
 
@@ -261,8 +262,10 @@ E --> i
 Algoritmo ContaAprovacoes
 DECLARAR n, fator, i: INTEIRO
 INICIAR
+// variavel n declarada pelo usuario
 ESCREVER "Digite um numero maior ou igual a 0: "
 LEIA n
+// variavel fator inicializada com o valor de 1
 fator = 1
 i = 1
 SE n = 0 ou n = 1
@@ -271,7 +274,8 @@ SE n = 0 ou n = 1
 SENÂO
 ENQUANTO i < n FAÇA
 	fator = fator * i
-	i = i + 1
+	// incrementa em 1 a variavel "i"
+        i = i + 1
 FIM_ENQUANTO
 ESCREVER fator
 FIM
@@ -340,13 +344,16 @@ I --LOOP--> E
 DECLARE  limite, anterior, atual, proximo INTEIRO
 ESCREVA("digite o limite da sequencia de fibonacci: ")
    LEIA(limite)
+   // variaveis anterior e atual declaradas como 0 e 1 respectivamente
    anterior <- 0
    atual <- 1
-   ESCREVA("anterior ->", anterior)
-   ESCREVA("atual ->", atual)
+   // Exibe as mensagens para entrada de variaveis como dados
+   ESCREVA(anterior)
+   ESCREVA(atual)
+   // realizará a operaçao enquanto o comando "enquanto" for verdadeiro
    ENQUANTO (atual + anterior <= limite) FACA
        proximo <- atual + anterior
-       ESCREVA ("proximo ->", proximo)
+       ESCREVA (proximo)
        anterior <- atual
        atual <- proximo
    fimenquanto
@@ -388,6 +395,7 @@ g --> d
 Algoritmo ContaAprovacoes
 DECLARAR num, digito, invertido: INTEIRO
 INICIAR
+// variavel num declarada pelo usuario
 ESCREVER "Digite um númmero positivo: "
 LEIA num
 ENQUANTO num > 0 FAÇA
