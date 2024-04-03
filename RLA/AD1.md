@@ -145,19 +145,24 @@ j --> e
 
 ```
 Algoritmo soma_de_numeros
-DECLARAR n, soma, i: INTEIRO
+DECLARAR n, soma, i, num: INTEIRO
 INICIAR
 ESCREVA "Digite quantos numeros serão somados: "
 LEIA n
-soma <- 0
-i <- 1
-ENQUANTO soma < n FAÇA
-	Digite um numero:
-	soma = soma + i
+SE n >= 0 ENTAO
+	soma <- 0
+	i <- 1
+	ENQUANTO i <= n FAÇA
+		Digite um numero:, i
+		LEIA num
+		soma = soma + num
+		i = i+1
+	FIM_ENQUANTO
+senao
+	ESCREVA "o n deve ser maior ou igual a zero" 
+fimse	
 	
-FIM_ENQUANTO
-ESCREVA soma
-FIM
+FIMALGORITMO
 ```
 #### Teste de mesa 
 
