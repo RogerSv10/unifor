@@ -65,12 +65,12 @@ Será considerado aprovado o aluno que tirar nota 50 ou maior (no intervalo de 0
 ### pseudocodigo
 ```
 Algoritmo ContaAprovacoes
-DECLARAR n, cont, i, nota: INTEIRO
+DECLARAR nNot, cont, i, nota: INTEIRO
 INICIAR
 ESCREVA "Digite o numero de notas: "
-LEIA n
-ENQUANTO i != n FAÇA
-	ESCREVA "digite a nota de 0 a 100:"
+LEIA nNot
+ENQUANTO i < n FAÇA
+	ESCREVA "digite a nota: "
 	LEIA nota
 	SE nota >= 50 ENTÃO
 		cont = cont + 1
@@ -144,17 +144,19 @@ j --> e
 ### Pseudocódigo 
 
 ```
-Algoritmo ContaAprovacoes
-DECLARAR n, soma, a, i: INTEIRO
+Algoritmo soma_de_numeros
+DECLARAR n, soma, i: INTEIRO
 INICIAR
-ESCREVER "Digite quantos numeros serão somados: "
+ESCREVA "Digite quantos numeros serão somados: "
 LEIA n
-EMQUANTO a != 0 FAÇA
+soma <- 0
+i <- 1
+ENQUANTO soma < n FAÇA
 	Digite um numero:
 	soma = soma + i
-	a = a + 1
+	
 FIM_ENQUANTO
-ESCREVER soma
+ESCREVA soma
 FIM
 ```
 #### Teste de mesa 
@@ -203,19 +205,21 @@ k --> e
 ### Pseudocódigo 
 
 ```
-Algoritmo ContaAprovacoes
-DECLARAR n, S, i, numerador, denominador: REAL
+Algoritmo calculo_de_serie
+DECLARAR numT, S, i, numerador, denominador, termo: REAL
 ESCREVA Digite o numero de termos: 
-LEIA n
-S = 0, i = 0
-ENQUANTO i < n FAÇA
-	numerodor = i * 2 + 1
+LEIA numT
+// variaveis S e i declaradas como 0 e 0 respectivamente
+S = 0 
+i = 0
+ENQUANTO i < numT FACA
+	numerador = i * 2 + 1
 	denominador = i * 2 + 2
 	termo = numerador/denominador
 	S = S + termo
 	i = i + 1
 FIM_ENQUANTO
-ESCREVER S
+ESCREVA S
 FIM
 ```
 #### Teste de mesa 
@@ -259,7 +263,7 @@ E --> i
 #### Pseudocódigo 
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo calculo_fatorial
 DECLARAR n, fator, i: INTEIRO
 INICIAR
 // variavel n declarada pelo usuario
@@ -267,6 +271,7 @@ ESCREVER "Digite um numero maior ou igual a 0: "
 LEIA n
 // variavel fator inicializada com o valor de 1
 fator = 1
+// variavel i inicializada com o valor de 1
 i = 1
 SE n = 0 ou n = 1
 	ESCREVER fator
@@ -392,19 +397,7 @@ g --> d
 #### Pseudocódigo 
 
 ```
-Algoritmo ContaAprovacoes
-DECLARAR num, digito, invertido: INTEIRO
-INICIAR
-// variavel num declarada pelo usuario
-ESCREVER "Digite um númmero positivo: "
-LEIA num
-ENQUANTO num > 0 FAÇA
-	digito = num % 10
-	invertido = invertido * 10 + digito
-	num = num / 10
-FIM_ENQUANTO
-ESCREVER = invertido
-FIM
+
 ```
 #### Teste de mesa 
 
