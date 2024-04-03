@@ -23,7 +23,7 @@ J --> I
 
 ### Pseudocódigo
 ```
-1  ALGORITMO calReajuste
+1  ALGORITMO sal_Reajuste
 2  DECLARE  sal, sal_reaj: real, prof: caractere
 3  INICIO
 4  // mostra a mensagem para a atribuir um dado a variavel
@@ -39,7 +39,7 @@ J --> I
 7     sal_reaj ← 1.5 * sal
 8   CASO prof = “Gerente”		// caso 2
 9     sal_reaj ← 1.3 * sal
-10  SENÃO
+10 CASO CONTRARIO                       // caso 3
 11    sal_reaj ← 1.1 * sal
 12 FIM_ESCOLHA
 13 ESCREVA “Salário Reajustado = “, sal_reaj
@@ -149,21 +149,27 @@ H --> J
 Algoritmo Calculadora
 DECLARAR n1, n2, opcao, resultado: REAL
 INICIAR
+// mostra a mensagem para a atribuir um dado a variavel
 ESCREVER "digite um numero:"
+// atribui a variavel o valor inserido
 LEIA n1
 ESCREVER "digite outro numero:"
 LEIA n2
 ESCREVER "selecione a operação desejada:\n 1 para: Somar(+)\n 2 para: Subtrair(-)\n 3 para: Multiplicar(x)\n 4 para: Dividir(/)"
 LEIA opcao
-SE opcao == 1 ENTAO
+SE opcao == 1 ENTAO               // atribui uma condiçao para que o algoritmo seja executado
 	resultado = n1 + n2
-SENAO SE opcao == 2 ENTAO
-	resultado = n1 - n2
-SENAO SE opcao == 3 ENTAO
-	resultado = n1 * n2
 SENAO
-	resultado = n1 / n2
-
+	SE opcao == 2 ENTAO
+	resultado = n1 - n2
+	SENAO
+		SE opcao == 3 ENTAO
+		   resultado = n1 * n2
+		SENAO
+			resultado = n1 / n2
+                FIMSE        
+        FIMSE
+FIMSE
 ESCREVER resultado
 FIM
 ```
@@ -209,18 +215,22 @@ G --> H
 Algoritmo ClassificaCategoria
 DECLARAR idade: INTEIRO
 INICIAR
-ESCREVER "Digite sua idade:"
+ESCREVA "Digite sua idade:"
 LEIA idade
-SE 5 <= idade <=7 ENTAO
-	ESCREVER "categoria: infantil A"
-SENAO SE 8 <= idade <=10 ENTAO
-	ESCREVER "categoria: infantil B"
-SENAO SE 11 <= idade <=13 ENTAO
-	ESCREVER "categoria: infantil B"
-SENAO SE 14 <= idade <=17 ENTAO
-	ESCREVER "categoria: juvenil B"
-SENÃO
-	ESCREVER "categoria: adulto"
+SE 5 <= idade <=7 ENTAO                        // atribui uma condiçao para que o algoritmo seja executado
+	ESCREVA "categoria: infantil A"
+SENAO
+	SE 8 <= idade <=10 ENTAO
+	ESCREVA "categoria: infantil B"
+	SENAO
+		SE 11 <= idade <=13 ENTAO
+		ESCREVA "categoria: infantil B"
+		SENAO
+			SE 14 <= idade <=17 ENTAO
+			ESCREVA "categoria: juvenil B"
+		FIMSE	SENÃO
+	FIMSE			ESCREVA "categoria: adulto"
+FIMSE
 FIM
 ```
 
