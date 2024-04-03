@@ -72,7 +72,7 @@ G --> H
 #### Pseudocódigo 
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo novo_salario
 DECLARAR salario, novo_salario: REAL
 // mostra a mensagem para entrada de dados na variavel
 ESCREVA "Digite seu salario: "
@@ -116,7 +116,7 @@ H --N--> J{{REPROVADO}}
 ### Pseudocódigo 
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo media_arit
 DECLARE nota1, nota2, media: REAL
 ESCREVA "Digite a nota 1:" 
 LEIA nota1
@@ -158,7 +158,7 @@ E --> H
 #### Pseudocódigo 
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo CNH_idade
 DECLARAR idade, idade_falta: INTEIRO
 ESCREVA "Digite sua idade: "
 LEIA idade
