@@ -28,7 +28,9 @@ i --> j
 ```
 ALGORITMO verifica_par_impar
 DECLARE numero, resto INTEIRO
+// Exibe a mensagem para entrada de dados
 ESCREVA "digite um numero : "
+// atribui o dado inserido a variavel
 LEIA numero
 SE numero >= 0 ENTAO
 		resto = numero % 2
@@ -72,14 +74,16 @@ G --> H
 ```
 Algoritmo ContaAprovacoes
 DECLARAR salario, novo_salario: REAL
-ESCREVER "Digite seu salario: "
+// mostra a mensagem para entrada de dados na variavel
+ESCREVA "Digite seu salario: "
+// atribui o dado inserido a variavel
 LEIA salario
-SE salario <= 500 ENTAO
+SE salario <= 500 ENTAO  
 	novo_salario = salario + salario * 0.2
-	ESCREVER "Seu novo salario: R$", novo_salario
+	ESCREVA "Seu novo salario: R$", novo_salario
 SENAO
 	novo_salario = salario + salario * 0.1
-	ESCREVER "Seu novo salario: R$", novo_salario
+	ESCREVA "Seu novo salario: R$", novo_salario
 FIM
 ```
 
@@ -114,15 +118,15 @@ H --N--> J{{REPROVADO}}
 ```
 Algoritmo ContaAprovacoes
 DECLARE nota1, nota2, media: REAL
-ESCREVER "Digite a nota 1:" 
+ESCREVA "Digite a nota 1:" 
 LEIA nota1
-ESCREVER "Digite a nota 2:" 
+ESCREVA "Digite a nota 2:" 
 LEIA nota2
 media = (nota1 + nota2) / 2
 SE media >= 7 ENTAO
-	ESCREVER("APROVADO")
+	ESCREVA("APROVADO")
 SENAO
-	ESCREVER("REPROVADO")
+	ESCREVA("REPROVADO")
 ```
 
 ### Teste de mesa 
@@ -156,13 +160,13 @@ E --> H
 ```
 Algoritmo ContaAprovacoes
 DECLARAR idade, idade_falta: INTEIRO
-ESCREVER "Digite sua idade: "
+ESCREVA "Digite sua idade: "
 LEIA idade
 SE idade >= 18 ENTAO
-	ESCREVER "Pode tirar CNH"
+	ESCREVA "Pode tirar CNH"
 SENAO
 	idade_falta = 18 - idade
-	ESCREVER "Falta ", idade_falta, " anos para tirar CNH"
+	ESCREVA "Falta ", idade_falta, " anos para tirar CNH"
 FIM
 ```
 
