@@ -158,9 +158,9 @@ SE n >= 0 ENTAO
 		soma = soma + num
 		i = i+1
 	FIM_ENQUANTO
-senao
+SENAO
 	ESCREVA "o n deve ser maior ou igual a zero" 
-fimse	
+FIMSE	
 	
 FIMALGORITMO
 ```
