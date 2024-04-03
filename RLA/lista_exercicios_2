@@ -26,7 +26,14 @@ J --> I
 1  ALGORITMO calReajuste
 2  DECLARE  sal, sal_reaj: real, prof: caractere
 3  INICIO
-4  LEIA sal, prof
+4  // mostra a mensagem para a atribuir um dado a variavel
+   ESCREVA "INSIRA SUA PROFISSAO: "
+   // atribui a variavel o valor inserido
+   LEIA prof
+   // mostra a mensagem para a atribuir um dado a variavel
+   ESCREVA "INSIRA SEU SALARIO: "
+   // atribui a variavel o valor inserido
+   LEIA sal
 5  ESCOLHA
 6   CASO prof == “Técnico”		// caso 1
 7     sal_reaj ← 1.5 * sal
@@ -53,7 +60,9 @@ Calcule a média de quatro números inteiros dados.
 ```
 ALGORITMO calcular_media
 DECLARE n1, n2, n3, n4, media INTEIRO
+// mostra a mensagem para a atribuir um dado a variavel
 ESCREVA "Digite sua primeira nota: "
+// atribui a variavel o valor inserido
 LEIA n1
 ESCREVA "digite sua segunda nota: "
 LEIA n2
@@ -61,6 +70,7 @@ ESCREVA "digite sua terceira nota: "
 LEIA n3
 ESCREVA "digite sua quarta nota: "
 LEIA n4
+// executa o calculo da media somando os valores inseridos na variavel e dividindo pela quantidade
 media <-- (n1 + n2 + n3 + n4) / 4
 ESCREVA "sua media é: ", media
 ```
