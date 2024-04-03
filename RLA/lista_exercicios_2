@@ -99,8 +99,11 @@ Leia uma temperatura dada na escala Celsius (C) e imprima o equivalente em Fahre
 ```
 ALGORITMO converter_C_F
 DECLARE c, f REAL
+// mostra a mensagem para a atribuir um dado a variavel
 ESCREVA "digite a temperatura em fahrenheit: "
+// atribui a variavel o valor inserido
 LEIA f
+// executará a operaçao requisitada para concluir o algoritmo
 c <-- 5/9 * (f - 32)
 ESCREVA "a temperatura em celsius é: ", c)
 ```
